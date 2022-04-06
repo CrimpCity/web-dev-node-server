@@ -6,6 +6,7 @@ let users = people;
 const userController = (app) => {
     // request pattern /api/users to call a function
     app.get('/api/users', findAllUsers);
+    app.get('/api/users/:uid', findUserById);
 }
 
 // function runs when /api/users requested
@@ -14,13 +15,15 @@ const userController = (app) => {
 //     res.json(users);
 // }
 
+const findUserById = (req, res) => {
+    const userId = req.params.uid;
+    const user = users.find(u => u._id === userId);
+    res.json(user);
+}
 
 const findUsersByType = (type) => {
     return users.filter(user => user.type === type);
 }
-
-
-
 
 const findAllUsers = (req, res) => {
     const type = req.query.type;              // retrieve type parameter from query
@@ -30,7 +33,6 @@ const findAllUsers = (req, res) => {
     }
     res.json(users);
 }
-
 
 // exports so server.js can import
 export default userController;
