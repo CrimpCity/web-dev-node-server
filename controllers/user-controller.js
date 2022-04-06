@@ -7,6 +7,7 @@ const userController = (app) => {
     // request pattern /api/users to call a function
     app.get('/api/users', findAllUsers);
     app.get('/api/users/:uid', findUserById);
+    app.post('/api/users', createUser);
 }
 
 // function runs when /api/users requested
@@ -36,3 +37,11 @@ const findAllUsers = (req, res) => {
 
 // exports so server.js can import
 export default userController;
+
+
+const createUser = (req, res) => {
+    const newUser = req.body;
+    newUser._id = (new Date()).getTime() + '';
+    users.push(newUser);
+    res.json(newUser);
+}
