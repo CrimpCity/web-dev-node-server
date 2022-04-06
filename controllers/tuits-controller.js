@@ -1,7 +1,7 @@
 import posts from "./tuits/tuits.js";
 let tuits = posts;
 
-const createTuit = (req, res) => { }
+
 const updateTuit = (req, res) => { }
 const deleteTuit = (req, res) => { }
 
@@ -13,3 +13,11 @@ export default (app) => {
 }
 
 const findAllTuits = (req, res) => { res.json(tuits); }
+
+const createTuit = (req, res) => {
+    const newTuit = req.body;
+    newTuit._id = (new Date()).getTime() + '';
+    newTuit.likes = 0;
+    tuits.push(newTuit);
+    res.json(newTuit);
+}
