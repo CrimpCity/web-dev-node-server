@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/CrimpCity/web-dev-node-server/issues"
   },
-  "homepage": "https://github.com/CrimpCity/web-dev-node-server#readme"
+  "homepage": "https://github.com/CrimpCity/web-dev-node-server#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
