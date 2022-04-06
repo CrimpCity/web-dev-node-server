@@ -3,7 +3,6 @@ let tuits = posts;
 
 
 const updateTuit = (req, res) => { }
-const deleteTuit = (req, res) => { }
 
 export default (app) => {
     app.post('/api/tuits', createTuit);
@@ -20,4 +19,10 @@ const createTuit = (req, res) => {
     newTuit.likes = 0;
     tuits.push(newTuit);
     res.json(newTuit);
+}
+
+const deleteTuit = (req, res) => {
+    const tuitdIdToDelete = req.params.tid;
+    tuits = tuits.filter(t => t._id !== tuitdIdToDelete);
+    res.sendStatus(200);
 }
