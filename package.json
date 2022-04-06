@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "web-dev-node-server",
   "version": "1.0.0",
   "description": "",
