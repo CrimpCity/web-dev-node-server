@@ -16,11 +16,10 @@ const findAllTuits = (req, res) => { res.json(tuits); }
 const createTuit = (req, res) => {
     const newTuit = req.body;
     newTuit._id = (new Date()).getTime() + '';
-    newTuit.likes = 0;
+    newTuit.stats = { comments: 0, retuits: 0, likes: 0, dislikes: 0 };
     tuits.push(newTuit);
     res.json(newTuit);
 }
-
 
 const deleteTuit = (req, res) => {
     const tuitdIdToDelete = req.params.tid;
