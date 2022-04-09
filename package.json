@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "web-dev-node-server",
   "version": "1.0.0",
   "description": "",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/CrimpCity/web-dev-node-server/issues"
   },
-  "homepage": "https://github.com/CrimpCity/web-dev-node-server#readme"
+  "homepage": "https://github.com/CrimpCity/web-dev-node-server#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
 }
