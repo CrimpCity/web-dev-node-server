@@ -12,6 +12,9 @@ const userController = (app) => {
     app.put('/api/users/:uid', updateUser);
 }
 
+
+// http://localhost:4000/api/users/:uid
+
 // function runs when /api/users requested
 // const findAllUsers = (req, res) => {
 //     // responds with array of users
@@ -37,8 +40,6 @@ const findAllUsers = (req, res) => {
     res.json(users);
 }
 
-// exports so server.js can import
-export default userController;
 
 
 const createUser = (req, res) => {
@@ -62,3 +63,7 @@ const updateUser = (req, res) => {
     users = users.map(usr => usr._id === userId ? updatedUser : usr);
     res.sendStatus(200);
 }
+
+
+// exports so server.js can import
+export default userController;
