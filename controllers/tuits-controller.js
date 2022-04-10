@@ -30,6 +30,9 @@ const findAllTuits = async (req, res) => {
 
 const createTuit = async (req, res) => {
     const newTuit = req.body;
+    // make usernames unique
+    newTuit.postedBy.username = (new Date()).getTime() + '';
+    newTuit.stats = { comments: 0, retuits: 0, likes: 0, dislikes: 0 };
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
 }
