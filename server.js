@@ -8,6 +8,7 @@ import userController from './controllers/user-controller.js';
 import tuitsController from './controllers/tuits-controller.js';
 import mongoose from 'mongoose';
 
+// LOCAL DEVELOPMENT
 mongoose.connect('mongodb://localhost:27017/webdev');
 
 
