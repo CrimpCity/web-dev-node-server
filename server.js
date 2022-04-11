@@ -11,17 +11,17 @@ import mongoose from 'mongoose';
 
 // SET UP DATABASE CONNECTION
 // LOCAL DEVELOPMENT
-// mongoose.connect('mongodb://localhost:27017/webdev');
+mongoose.connect('mongodb://localhost:27017/webdev');
 
-// Mongo Cloud Deployment
-const PROTOCOL = "mongodb+srv";
-const DB_USERNAME = "Georgian"
-const DB_PASSWORD = "987654321"
-const HOST = "cluster0.itxlc.mongodb.net";
-const DB_NAME = "myFirstDatabase";
-const DB_QUERY = "retryWrites=true&w=majority";
-const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;
-mongoose.connect(connectionString);
+// // Mongo Cloud Deployment
+// const PROTOCOL = "mongodb+srv";
+// const DB_USERNAME = "Georgian"
+// const DB_PASSWORD = "987654321"
+// const HOST = "cluster0.itxlc.mongodb.net";
+// const DB_NAME = "myFirstDatabase";
+// const DB_QUERY = "retryWrites=true&w=majority";
+// const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;
+// mongoose.connect(connectionString);
 
 
 

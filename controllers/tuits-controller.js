@@ -31,7 +31,7 @@ const findAllTuits = async (req, res) => {
 const createTuit = async (req, res) => {
     const newTuit = req.body;
     // make usernames unique
-    newTuit.postedBy.username = (new Date()).getTime() + '';
+    newTuit.postedBy = { username: (new Date()).getTime().toString() };
     newTuit.stats = { comments: 0, retuits: 0, likes: 0, dislikes: 0 };
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
@@ -69,6 +69,12 @@ const updateTuit = async (req, res) => {
     res.sendStatus(status);
 }
 
+// const updateStats = async (req, res) => {
+//     const tuitdIdToUpdate = req.params.tid;
+//     const newStats = req.body;
+//     const status = await tuitsDao.updateTuitStats(tuitdIdToUpdate, newStats);
+//     res.sendStatus(status);
+// }
 
 // exports so server.js can import
 export default tuitsController;
